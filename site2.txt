@@ -1,0 +1,33 @@
+crypto isakmp policy 10
+			authentication pre-share
+			encryption DES
+			hash MD5
+			group 1
+			lifetime 
+			!
+			hostname 
+			!	
+			crypto isakmp key ciscokey address 
+			!
+			!
+			!
+			crypto map myvpn 10 ipsec-isakmp
+			set peer 
+			set transform-set MFI-ENSAM
+			match address 101
+			!
+			!
+			!
+			ip route    
+			!
+			interface nn
+			crypto map myvpn
+			exit
+			! 
+			do wr
+			crypto ipsec transform-set MFI-ENSAM  esp-DES esp-MD5-hmac
+				mode tunnel
+				exit 
+				!
+				access-list 101 permit ip    
+			!end
