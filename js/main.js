@@ -286,6 +286,8 @@ $(function(){
         onFinished: function (event, currentIndex)
         {
             $('#form').submit();
+            alert('Operation successful !');
+            window.location= "index.php";
         },
         labels: {
             finish: "Send",
