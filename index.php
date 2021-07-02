@@ -329,14 +329,18 @@
 										<td data-label="ip_address" id="txt_ip_1">ip_1</td>
 										<td data-label="interface" id="txt_int_1">interface_1</td>
 										<td data-label="user" id="txt_user_1">user_1</td>
-										<td data-label="pwd" id="txt_pwd_1">pwd_1</td>
+										<td data-label="pwd" >
+											<span id="txt_pwd_1">pwd_1 </span><br><input type="button" id="showPwd1" value="show">
+										</td>
 									</tr>
 									<tr>
 									<td data-label="site"> site II </td>
 										<td data-label="ip_address" id="txt_ip_2">ip_2</td>
 										<td data-label="interface" id="txt_int_2">interface_2</td>
 										<td data-label="user" id="txt_user_2">user_2</td>
-										<td data-label="pwd" id="txt_pwd_2">pwd_2</td>
+										<td data-label="pwd">
+											<span id="txt_pwd_2">pwd_2 </span><br><input type="button" id="showPwd2" value="show">
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -384,7 +388,9 @@
 										<td data-label="hash. algorithm" id="txt_hash_algo1">hash_algo1</td>
 										<td data-label="key length" id="txt_key_length">key_length</td>
 										<td data-label="life time" id="txt_lifeTime">lifeTime</td>
-										<td data-label="password" id="txt_password">password</td>
+										<td data-label="password" >
+											<span id="txt_password">password </span><br><input type="button" id="showPwd" value="show">
+										</td>
 									</tr>
 								</tbody>
 							</table>

@@ -7,6 +7,11 @@ $(function(){
         return false;
     }*/
 
+    function showPwd1(){
+        //document.getElementById("pwd_1").style.visibility="visible";
+
+    }
+
     function mySummary(){
         
         //GENINFO I
@@ -15,6 +20,12 @@ $(function(){
         var ip1 = document.getElementById("ip_1");
         var usr1 = document.getElementById("user_1");
         var pwd1 = document.getElementById("pwd_1");
+        
+        var Secretpwd1="";
+        Array.from(pwd1.value).forEach(function(){
+            Secretpwd1 += "*";
+        });
+
         //txtZone site1
         var txt_int_1 = document.getElementById("txt_int_1");
         var txt_ip_1 = document.getElementById("txt_ip_1");  
@@ -24,13 +35,33 @@ $(function(){
         txt_int_1.innerHTML =int1.value;
         txt_ip_1.innerHTML =ip1.value;
         txt_user_1.innerHTML =usr1.value;
-        txt_pwd_1.innerHTML =pwd1.value;
+        txt_pwd_1.innerHTML = Secretpwd1;
+
+        var btnPwd1=document.getElementById("showPwd1");
+        btnPwd1.addEventListener("click",function(){
+            if( btnPwd1.value=="show"){
+                txt_pwd_1.innerHTML = pwd1.value;
+                btnPwd1.value="hide";
+            }else{
+                txt_pwd_1.innerHTML = Secretpwd1;
+                btnPwd1.value="show";
+            }
+            
+        });
+        
+        
 
         //site2
         var int2 = document.getElementById("interface_2");
         var ip2 = document.getElementById("ip_2");
         var usr2 = document.getElementById("user_2");
         var pwd2 = document.getElementById("pwd_2");
+
+        var Secretpwd2="";
+        Array.from(pwd2.value).forEach(function(){
+            Secretpwd2 += "*";
+        });
+
         //txtZone site2
         var txt_int_2 = document.getElementById("txt_int_2");
         var txt_ip_2 = document.getElementById("txt_ip_2");  
@@ -40,7 +71,19 @@ $(function(){
         txt_int_2.innerHTML =int2.value;
         txt_ip_2.innerHTML =ip2.value;
         txt_user_2.innerHTML =usr2.value;
-        txt_pwd_2.innerHTML =pwd2.value;
+        txt_pwd_2.innerHTML =Secretpwd2;
+
+        var btnPwd2=document.getElementById("showPwd2");
+        btnPwd2.addEventListener("click",function(){
+            if( btnPwd2.value=="show"){
+                txt_pwd_2.innerHTML = pwd2.value;
+                btnPwd2.value="hide";
+            }else{
+                txt_pwd_2.innerHTML = Secretpwd2;
+                btnPwd2.value="show";
+            }
+            
+        });
         
         //////////////////////////////////////////////////////////////////
         //GENINFO II
@@ -77,6 +120,12 @@ $(function(){
         var key_length_group = document.getElementById("key_length_group");
         var lifeTime = document.getElementById("lifeTime");
         var password = document.getElementById("password");
+
+        var Secretpwd="";
+        Array.from(password.value).forEach(function(){
+            Secretpwd += "*";
+        });
+
         //txt Zone site2
         var txt_encr_algo1 = document.getElementById("txt_encr_algo1");
         var txt_hash_algo1 = document.getElementById("txt_hash_algo1");  
@@ -88,7 +137,19 @@ $(function(){
         txt_hash_algo1.innerHTML=hash_algo1.value;
         txt_key_length.innerHTML=key_length_group.value;
         txt_lifeTime.innerHTML=lifeTime.value;
-        txt_password.innerHTML=password.value;
+        txt_password.innerHTML=Secretpwd;
+
+        var btnPwd=document.getElementById("showPwd");
+        btnPwd.addEventListener("click",function(){
+            if( btnPwd.value=="show"){
+                txt_password.innerHTML = password.value;
+                btnPwd.value="hide";
+            }else{
+                txt_password.innerHTML = Secretpwd;
+                btnPwd.value="show";
+            }
+            
+        });
 
         //////////////////////////////////////////////////////////////////
         //IKE2
@@ -128,8 +189,10 @@ $(function(){
         
     }
 
+
+
     var form  = $("#form");
-    form.validate({
+    /*form.validate({
         rules : {
             ip_1: {
                 required : true,
@@ -231,7 +294,7 @@ $(function(){
                 pattern : "Enter an appropriate port number",
             }
         }
-    });
+    });*/
 
 	$("#wizard").steps({
         headerTag: "h4",
