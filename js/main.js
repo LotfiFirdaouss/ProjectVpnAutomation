@@ -192,7 +192,7 @@ $(function(){
 
 
     var form  = $("#form");
-    /*form.validate({
+    form.validate({
         rules : {
             ip_1: {
                 required : true,
@@ -294,7 +294,7 @@ $(function(){
                 pattern : "Enter an appropriate port number",
             }
         }
-    });*/
+    });
 
 	$("#wizard").steps({
         headerTag: "h4",
