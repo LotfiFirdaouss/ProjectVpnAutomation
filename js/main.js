@@ -1,4 +1,6 @@
 $(function(){
+
+    
     /*
     var confirm=document.getElementById("accept_terms").value;
     if(confirm.checked==false){
@@ -349,8 +351,8 @@ $(function(){
         onFinished: function (event, currentIndex)
         {
             $('#form').submit();
-            alert('Operation successful !');
-            window.location= "index.php";
+            //alert('Operation successful !');
+            //window.location= "index.php";
         },
         labels: {
             finish: "Send",
